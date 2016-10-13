@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NgReduxModule, NgRedux } from 'ng2-redux';
 import rootReducer from './reducers';
+import { ProductlistComponent } from './components/productlist/productlist.component';
 
 interface IAppState {};
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProductlistComponent
   ],
   imports: [
     BrowserModule,

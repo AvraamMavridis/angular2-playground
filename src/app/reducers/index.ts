@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import bets from './betReducer';
+import products from './productReducer';
 
 export default combineReducers({
-  bets
+  products
 })
