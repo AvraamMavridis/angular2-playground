@@ -1,3 +1,5 @@
-<p>
-  <button name="add" (click)="addProduct($event)">Add</button>
-</p>
+<button (click)="addProduct($event)">Add product</button>
+
+<li *ngFor="let item of (products$ | async); let i = index; trackBy: trackByFn">
+    {{ item.name }} {{ item.category}}
+</li>

@@ -1,0 +1,29 @@
+@import '../../../variables'
+@import '../../../mixins'
+
+.products-bar
+    display: flex
+    height: 100px
+    border-bottom: 1px solid $bg-second
+    align-items: center
+    justify-content: center
+
+.products-bar-category
+    height: 100%
+    min-width: 100px
+    padding: 10px
+    text-align: center
+    border-left: 1px solid $bg-second
+    border-right: 1px solid $bg-second
+
+    img
+        height: 70%
+        cursor: pointer
+
+        &:hover
+            height: 80%
+
+    label
+        display: block
+        margin-top: 5px
+        @include font

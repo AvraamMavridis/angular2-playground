@@ -7,14 +7,23 @@ import { HeaderComponent } from './components/header/header.component';
 import { NgReduxModule, NgRedux } from 'ng2-redux';
 import rootReducer from './reducers';
 import { ProductlistComponent } from './components/productlist/productlist.component';
+import { AppState } from './interfaces/AppState';
+import { ProductsbarComponent } from './components/productsbar/productsbar.component';
+import { MainComponent } from './components/main/main.component';
 
 interface IAppState {};
+
+let InitialState : AppState = {
+  products : []
+}
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ProductlistComponent
+    ProductlistComponent,
+    ProductsbarComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -22,11 +31,11 @@ interface IAppState {};
     HttpModule,
     NgReduxModule
   ],
-  providers: [],
+  providers: [  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
   constructor(ngRedux: NgRedux<IAppState> ) {
-    ngRedux.configureStore(rootReducer, {});
+    ngRedux.configureStore(rootReducer, InitialState, [] );
   }
 }

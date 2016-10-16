@@ -1,0 +1,6 @@
+<div class="col-md-12 products-bar">
+  <div *ngFor="let category of categories; let i=index;" class="products-bar-category" >
+    <img [src]="category.icon" />
+    <label>{{ category.name }}</label>
+  </div>
+</div>
