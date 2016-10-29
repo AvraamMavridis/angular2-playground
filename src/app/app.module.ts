@@ -10,12 +10,14 @@ import { ProductlistComponent } from './components/productlist/productlist.compo
 import { AppState } from './interfaces/AppState';
 import { ProductsbarComponent } from './components/productsbar/productsbar.component';
 import { MainComponent } from './components/main/main.component';
+import { RouterModule }   from '@angular/router';
+import { CategoryComponent } from './components/category/category.component';
 
 interface IAppState {};
 
-let InitialState : AppState = {
+let InitialState: AppState = {
   products : []
-}
+};
 
 @NgModule({
   declarations: [
@@ -23,16 +25,21 @@ let InitialState : AppState = {
     HeaderComponent,
     ProductlistComponent,
     ProductsbarComponent,
-    MainComponent
+    MainComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    NgReduxModule
+    NgReduxModule,
+    RouterModule.forRoot([
+      { path: '', component: MainComponent },
+      { path: 'category/:category', component: MainComponent }
+    ])
   ],
   providers: [  ],
-  bootstrap: [AppComponent]
+  bootstrap:  [AppComponent]
 })
 export class AppModule {
   constructor(ngRedux: NgRedux<IAppState> ) {
