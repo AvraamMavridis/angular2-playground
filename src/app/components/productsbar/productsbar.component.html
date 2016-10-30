@@ -1,8 +1,9 @@
 <div class="col-md-12 products-bar">
-    <div class="products-bar-category" 
-         *ngFor="let cat of categories; let i=index;" 
-         [routerLink]="['category + / + cat.name']">
-      <img [src]="cat.icon" />
-      <label>{{ cat.name }}</label>
+    <div class="products-bar-category"
+         *ngFor="let cat of categories; let i=index;">
+      <a [routerLink]="'category/' + cat.name">
+        <img [src]="cat.icon" />
+        <label>{{ cat.name }}</label>
+      </a>
     </div>
 </div>

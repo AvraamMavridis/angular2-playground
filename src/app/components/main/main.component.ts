@@ -12,7 +12,7 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe( params =>
-      console.dir(params)
+      console.info(params)
     )
   }
 
